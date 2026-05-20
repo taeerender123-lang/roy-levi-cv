@@ -905,19 +905,20 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
 @media print {
   @page {
     size: A4;
-    margin: 4mm 8mm;
+    margin: 6mm 10mm;
   }
 
   body {
-    background-color: white;
-    color: #111;
-    font-size: 8pt;
-    padding-bottom: 0;
-    line-height: 1.2;
+    background-color: white !important;
+    color: #000 !important;
+    font-family: 'Calibri', 'Arial', sans-serif !important;
+    font-size: 8.5pt !important;
+    line-height: 1.3 !important;
     width: 100% !important;
     max-width: 100% !important;
   }
 
+  /* Hide digital elements and the profile image completely for classic CV look */
   .bg-blobs,
   header.top-nav,
   .theme-toggle,
@@ -925,19 +926,21 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   .agc-visualizer,
   .control-btn,
   .contact-section,
-  .footer {
+  .footer,
+  .profile-container {
     display: none !important;
   }
 
   .container {
-    max-width: 100%;
-    padding: 0;
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 
+  /* Two equal vertical columns */
   main.container {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Divides the page vertically into 2! */
-    gap: 0 20px !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 30px !important;
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
@@ -947,243 +950,317 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   .main-col-right {
     display: flex !important;
     flex-direction: column !important;
-    gap: 8px !important;
+    gap: 12px !important;
   }
 
+  /* Classic Header Section */
+  .hero-section {
+    grid-column: span 2 !important; /* Header spans full width */
+    display: block !important;
+    text-align: center !important;
+    padding: 0 0 10px 0 !important;
+    border-bottom: 2px solid #000 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .hero-name {
+    font-size: 18pt !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    color: #000 !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 4px !important;
+    text-align: center !important;
+  }
+
+  .hero-title {
+    font-size: 10pt !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 6px !important;
+    text-align: center !important;
+  }
+
+  .hero-tagline {
+    display: none !important; /* Hide summary block to look like a clean classic CV */
+  }
+
+  /* Single-line contact details separated by pipes */
+  .contact-grid {
+    display: block !important;
+    text-align: center !important;
+    margin-top: 4px !important;
+  }
+
+  .contact-chip {
+    display: inline !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 8.5pt !important;
+    color: #333 !important;
+  }
+
+  .contact-chip:not(:last-child)::after {
+    content: "  |  " !important;
+    color: #888 !important;
+    font-weight: normal !important;
+  }
+
+  .contact-chip svg {
+    display: none !important; /* Remove all icons */
+  }
+
+  /* Sections */
+  .section {
+    padding: 0 !important;
+    margin-bottom: 10px !important;
+    border: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .section-header {
+    margin-bottom: 6px !important;
+    border-bottom: 1.5px solid #000 !important; /* Classic horizontal line below headers */
+    padding-bottom: 2px !important;
+  }
+
+  .section-title {
+    font-size: 9.5pt !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    color: #000 !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  /* Cards are transparent text containers */
+  .card {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Education */
+  .education-meta {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    margin-bottom: 4px !important;
+  }
+
+  .institution {
+    font-size: 9pt !important;
+    font-weight: bold !important;
+    color: #000 !important;
+    display: inline !important;
+  }
+
+  .degree {
+    font-size: 8.5pt !important;
+    font-style: italic !important;
+    color: #333 !important;
+  }
+
+  .gpa-badge {
+    font-size: 8.5pt !important;
+    font-weight: bold !important;
+    color: #000 !important;
+  }
+
+  .gpa-badge::before {
+    content: "" !important;
+  }
+
+  /* Comma-separated list for tags */
+  .skills-list-inline {
+    display: block !important;
+    margin-top: 4px !important;
+  }
+
+  .skills-list-inline::before {
+    content: "Skills: " !important;
+    font-weight: bold !important;
+  }
+
+  .skill-tag {
+    display: inline !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 8.5pt !important;
+    color: #333 !important;
+  }
+
+  .skill-tag:not(:last-child)::after {
+    content: ", " !important;
+  }
+
+  /* Courses List as a single line */
+  .courses-grid {
+    display: block !important;
+  }
+
+  .course-card {
+    display: inline !important;
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .course-card:not(:last-child)::after {
+    content: ", " !important;
+  }
+
+  .course-name {
+    font-size: 8.5pt !important;
+    color: #333 !important;
+  }
+
+  .course-grade {
+    font-size: 8.5pt !important;
+    color: #000 !important;
+    font-weight: bold !important;
+  }
+
+  .course-grade::before {
+    content: " (" !important;
+  }
+
+  .course-grade::after {
+    content: ")" !important;
+  }
+
+  /* Projects Section */
+  .project-card {
+    display: block !important;
+  }
+
+  .project-name {
+    font-size: 9pt !important;
+    font-weight: bold !important;
+    color: #000 !important;
+  }
+
+  /* Hide GitHub link buttons */
+  #project-github-btn {
+    display: none !important;
+  }
+
+  .project-desc {
+    margin-top: 4px !important;
+    color: #333 !important;
+    font-size: 8.5pt !important;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 0 !important;
+  }
+
+  .timeline::before {
+    display: none !important;
+  }
+
+  .timeline-dot {
+    display: none !important;
+  }
+
+  .timeline-item {
+    margin-bottom: 8px !important;
+    padding-left: 0 !important;
+  }
+
+  .timeline-meta {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    margin-bottom: 2px !important;
+  }
+
+  .timeline-title {
+    font-size: 9pt !important;
+    font-weight: bold !important;
+    color: #000 !important;
+  }
+
+  .timeline-date {
+    font-size: 8.5pt !important;
+    font-weight: bold !important;
+    color: #000 !important;
+    padding: 0 !important;
+  }
+
+  .timeline-desc {
+    color: #333 !important;
+    font-size: 8.5pt !important;
+  }
+
+  /* Volunteer and Languages */
   #volunteer-lang-card {
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
-    border-top: none !important;
-    padding-top: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
+    gap: 8px !important;
   }
 
   #volunteer-lang-card hr {
     display: block !important;
+    border: none !important;
+    border-top: 1px dashed #ccc !important;
     margin: 6px 0 !important;
-    border: none !important;
-    border-top: 1px solid #eee !important;
   }
 
-  .hero-section {
-    padding: 4px 0 6px 0;
-    align-items: flex-start;
-    text-align: left;
-    display: grid;
-    grid-template-columns: 75px 1fr;
-    gap: 12px;
+  .language-item {
+    display: inline !important;
+    font-size: 8.5pt !important;
   }
 
-  .profile-container {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 0;
+  .language-item:not(:last-child)::after {
+    content: ", " !important;
   }
 
-  .profile-img-border {
-    display: none;
+  .language-name {
+    font-weight: bold !important;
+    color: #000 !important;
   }
 
-  .profile-img-container {
-    width: 70px;
-    height: 70px;
-    border: none;
+  .language-level::before {
+    content: " (" !important;
   }
 
-  .hero-name {
-    font-size: 1.3rem;
-    color: #000;
-    -webkit-text-fill-color: initial;
-    background: none;
-    margin-bottom: 1px;
-  }
-
-  .hero-title {
-    font-size: 0.8rem;
-    color: #333;
-    margin-bottom: 2px;
-  }
-
-  .hero-tagline {
-    font-size: 7.5pt;
-    color: #555;
-    margin-bottom: 4px;
-    text-align: left;
-    max-width: 100%;
-    line-height: 1.2;
-  }
-
-  .contact-grid {
-    justify-content: flex-start;
-    gap: 2px 8px;
-  }
-
-  .contact-chip {
-    background: transparent;
-    border: none;
-    padding: 0;
-    font-size: 7.5pt;
-    color: #444;
-  }
-
-  .contact-chip svg {
-    fill: #444;
-    width: 10px;
-    height: 10px;
-  }
-
-  .section {
-    padding: 2px 0;
-    border: none !important;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .section-header {
-    margin-bottom: 2px;
-  }
-
-  .section-title {
-    font-size: 0.95rem;
-    color: #111;
-  }
-
-  .card {
-    background: transparent;
-    border: none;
-    padding: 0;
-    box-shadow: none;
-  }
-
-  .card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  .gpa-badge {
-    border: none;
-    background: transparent;
-    color: #000;
-    padding: 0;
-    font-size: 8pt;
-  }
-
-  .gpa-badge::before {
-    content: "GPA: ";
-  }
-
-  .skill-tag {
-    background: transparent;
-    border: 1px solid #777;
-    color: #222;
-    padding: 0 3px;
-    font-size: 7pt;
-  }
-
-  .courses-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-  }
-
-  .course-card {
-    padding: 2px;
-    border: 1px solid #ddd;
-    border-radius: var(--radius-sm);
-  }
-
-  .course-name {
-    font-size: 7pt;
-    margin-bottom: 0px;
-  }
-
-  .course-grade {
-    font-size: 7.5pt;
-    -webkit-text-fill-color: initial;
-    background: none;
-    color: #333;
-  }
-
-  .project-card {
-    display: block;
-    margin-bottom: 0;
-  }
-
-  .project-details {
-    gap: 2px;
-  }
-
-  .timeline {
-    padding-left: 10px;
-  }
-
-  .timeline::before {
-    left: 2px;
-    background: #ccc;
-  }
-
-  .timeline-dot {
-    left: -10px;
-    width: 5px;
-    height: 5px;
-    border-width: 1.5px;
-    background: white;
-  }
-
-  .timeline-item {
-    margin-bottom: 4px;
-  }
-
-  .timeline-meta {
-    margin-bottom: 1px;
-  }
-
-  .timeline-date {
-    font-size: 7pt;
-    background: transparent;
-    padding: 0;
-    color: #555;
-  }
-
-  .timeline-title {
-    font-size: 8pt;
-  }
-
-  .timeline-desc {
-    font-size: 7.5pt;
-    line-height: 1.2;
+  .language-level::after {
+    content: ")" !important;
   }
 
   .volunteer-list {
-    grid-template-columns: 1fr;
-    gap: 4px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
   }
 
   .volunteer-item {
-    gap: 4px;
-  }
-
-  .volunteer-icon {
-    display: none;
+    display: block !important;
   }
 
   .volunteer-text h4 {
-    font-size: 8pt;
+    font-size: 8.5pt !important;
+    font-weight: bold !important;
+    color: #000 !important;
+    display: inline !important;
+  }
+
+  .volunteer-text h4::after {
+    content: " - " !important;
   }
 
   .volunteer-text p {
-    font-size: 7.5pt;
-    line-height: 1.2;
-  }
-
-  .skill-progress-bar-bg {
-    background: #eee;
-    border: 1px solid #ddd;
-  }
-
-  .skill-progress-bar-fill {
-    background: #444;
+    display: inline !important;
+    font-size: 8.5pt !important;
+    color: #333 !important;
   }
 }
