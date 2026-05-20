@@ -745,7 +745,7 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   gap: 16px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .volunteer-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -793,7 +793,7 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   gap: 24px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .two-col-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -901,6 +901,8 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
     font-size: 8.5pt;
     padding-bottom: 0;
     line-height: 1.25;
+    width: 194mm;
+    margin: 0 auto;
   }
 
   .bg-blobs,
