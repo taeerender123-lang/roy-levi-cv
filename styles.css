@@ -950,6 +950,39 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   gap: 32px;
 }
 
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.hero-cta-btn {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(var(--accent-primary-rgb), 0.25);
+  transition: all var(--transition-fast);
+}
+
+.hero-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(var(--accent-primary-rgb), 0.35);
+}
+
+.hero-cta-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 /* Print Styles */
 @media print {
   @page {
@@ -976,7 +1009,8 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   .control-btn,
   .contact-section,
   .footer,
-  .profile-container {
+  .profile-container,
+  .hero-actions {
     display: none !important;
   }
 
