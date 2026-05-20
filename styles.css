@@ -898,11 +898,11 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   body {
     background-color: white;
     color: #111;
-    font-size: 8.5pt;
+    font-size: 8pt;
     padding-bottom: 0;
-    line-height: 1.25;
-    width: 194mm;
-    margin: 0 auto;
+    line-height: 1.2;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .bg-blobs,
@@ -922,8 +922,48 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   }
 
   main.container {
-    column-count: 2;
-    column-gap: 24px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #education-sec {
+    order: 1 !important;
+  }
+
+  #projects-sec {
+    order: 2 !important;
+  }
+
+  #courses-sec {
+    order: 3 !important;
+  }
+
+  #military-sec {
+    order: 4 !important;
+  }
+
+  #volunteer-sec {
+    order: 5 !important;
+    grid-column: span 2 !important;
+  }
+
+  #volunteer-lang-card {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr !important;
+    gap: 16px !important;
+    border-top: 1px solid #eee !important;
+    padding-top: 8px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  #volunteer-lang-card hr {
+    display: none !important;
   }
 
   .hero-section {
@@ -931,13 +971,13 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
     align-items: flex-start;
     text-align: left;
     display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 15px;
+    grid-template-columns: 75px 1fr;
+    gap: 12px;
   }
 
   .profile-container {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     margin-bottom: 0;
   }
 
@@ -946,13 +986,13 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   }
 
   .profile-img-container {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     border: none;
   }
 
   .hero-name {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: #000;
     -webkit-text-fill-color: initial;
     background: none;
@@ -960,13 +1000,13 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   }
 
   .hero-title {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #333;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
 
   .hero-tagline {
-    font-size: 7.8pt;
+    font-size: 7.5pt;
     color: #555;
     margin-bottom: 4px;
     text-align: left;
@@ -976,14 +1016,14 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
 
   .contact-grid {
     justify-content: flex-start;
-    gap: 3px 8px;
+    gap: 2px 8px;
   }
 
   .contact-chip {
     background: transparent;
     border: none;
     padding: 0;
-    font-size: 7.8pt;
+    font-size: 7.5pt;
     color: #444;
   }
 
@@ -994,18 +1034,18 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   }
 
   .section {
-    padding: 4px 0;
+    padding: 2px 0;
     border: none !important;
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
   .section-header {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   .section-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #111;
   }
 
@@ -1026,7 +1066,7 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
     background: transparent;
     color: #000;
     padding: 0;
-    font-size: 8.5pt;
+    font-size: 8pt;
   }
 
   .gpa-badge::before {
@@ -1038,27 +1078,27 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
     border: 1px solid #777;
     color: #222;
     padding: 0 3px;
-    font-size: 7.5pt;
+    font-size: 7pt;
   }
 
   .courses-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+    gap: 4px;
   }
 
   .course-card {
-    padding: 3px;
+    padding: 2px;
     border: 1px solid #ddd;
     border-radius: var(--radius-sm);
   }
 
   .course-name {
-    font-size: 7.5pt;
-    margin-bottom: 1px;
+    font-size: 7pt;
+    margin-bottom: 0px;
   }
 
   .course-grade {
-    font-size: 8pt;
+    font-size: 7.5pt;
     -webkit-text-fill-color: initial;
     background: none;
     color: #333;
@@ -1074,7 +1114,7 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   }
 
   .timeline {
-    padding-left: 12px;
+    padding-left: 10px;
   }
 
   .timeline::before {
@@ -1083,15 +1123,15 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   }
 
   .timeline-dot {
-    left: -12px;
-    width: 6px;
-    height: 6px;
-    border-width: 2px;
+    left: -10px;
+    width: 5px;
+    height: 5px;
+    border-width: 1.5px;
     background: white;
   }
 
   .timeline-item {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .timeline-meta {
@@ -1099,18 +1139,18 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   }
 
   .timeline-date {
-    font-size: 7.5pt;
+    font-size: 7pt;
     background: transparent;
     padding: 0;
     color: #555;
   }
 
   .timeline-title {
-    font-size: 8.5pt;
+    font-size: 8pt;
   }
 
   .timeline-desc {
-    font-size: 7.8pt;
+    font-size: 7.5pt;
     line-height: 1.2;
   }
 
@@ -1128,11 +1168,11 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   }
 
   .volunteer-text h4 {
-    font-size: 8.5pt;
+    font-size: 8pt;
   }
 
   .volunteer-text p {
-    font-size: 7.8pt;
+    font-size: 7.5pt;
     line-height: 1.2;
   }
 
