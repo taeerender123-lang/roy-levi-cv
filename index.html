@@ -33,10 +33,11 @@
           </svg>
         </button>
         <!-- Print Button -->
-        <button class="control-btn print-btn" id="print-btn" title="Download PDF / Print" aria-label="Download PDF / Print">
+        <button class="control-btn print-btn" id="print-btn" title="Export PDF / Print CV" aria-label="Export PDF / Print CV">
           <svg viewBox="0 0 24 24">
             <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
           </svg>
+          <span class="btn-text">Export PDF / Print</span>
         </button>
       </div>
     </div>
@@ -98,7 +99,7 @@
   </section>
 
   <main class="container main-layout-grid">
-    <!-- Left Column: Education, Courses, Volunteer & Languages -->
+    <!-- Left Column: Education, Courses, Technical Skills -->
     <div class="main-col-left">
       <!-- Education Section -->
       <section class="section section-first" id="education-sec">
@@ -113,15 +114,7 @@
             </div>
             <div class="gpa-badge" id="edu-gpa">GPA: 89 | Exp. July 27</div>
           </div>
-          <p>Proficient in Java, Python, and C/C++, with a strong foundation in Data Structures, Algorithms, and Object-Oriented Design.</p>
-          <div class="skills-list-inline">
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">C/C++</span>
-            <span class="skill-tag">Data Structures</span>
-            <span class="skill-tag">Algorithms</span>
-            <span class="skill-tag">OOP</span>
-          </div>
+          <p>Studying Core Computer Science principles with a strong focus on software engineering, algorithmic design, and problem solving.</p>
         </div>
       </section>
 
@@ -154,60 +147,50 @@
         </div>
       </section>
 
-      <!-- Volunteer & Languages -->
-      <section class="section" id="volunteer-sec">
+      <!-- Technical Skills Section -->
+      <section class="section" id="skills-sec">
         <div class="section-header">
-          <h3 class="section-title">Volunteer & Languages</h3>
+          <h3 class="section-title">Technical Skills</h3>
         </div>
-        <div class="card" style="display: flex; flex-direction: column; gap: 24px;" id="volunteer-lang-card">
-          <!-- Languages Sub-card -->
-          <div>
-            <h4 style="margin-bottom: 12px; font-size: 1.1rem; color: var(--text-primary);">Languages</h4>
-            <div class="language-item" id="lang-he">
-              <span class="language-name">Hebrew</span>
-              <span class="language-level">Mother Tongue</span>
-            </div>
-            <div class="language-item" id="lang-en">
-              <span class="language-name">English</span>
-              <span class="language-level">Fluent</span>
+        <div class="card skills-card" id="skills-container-card">
+          <!-- Programming Languages -->
+          <div class="skills-category-group">
+            <h4 class="skills-cat-title">Programming Languages</h4>
+            <div class="skills-list-inline">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C/C++</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML5/CSS3</span>
             </div>
           </div>
           
-          <hr style="border: none; border-top: 1px solid var(--border-color);">
+          <!-- Software & Tools -->
+          <div class="skills-category-group">
+            <h4 class="skills-cat-title">Software & Tools</h4>
+            <div class="skills-list-inline">
+              <span class="skill-tag">MATLAB</span>
+              <span class="skill-tag">SolidWorks</span>
+              <span class="skill-tag">AutoCAD</span>
+              <span class="skill-tag">Git & GitHub</span>
+            </div>
+          </div>
 
-          <!-- Volunteer Sub-card -->
-          <div>
-            <h4 style="margin-bottom: 12px; font-size: 1.1rem; color: var(--text-primary);">Volunteer Work</h4>
-            <div class="volunteer-list">
-              <div class="volunteer-item" id="vol-1">
-                <div class="volunteer-icon">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                  </svg>
-                </div>
-                <div class="volunteer-text">
-                  <h4>"LATET" NGO</h4>
-                  <p>Supporting local food distribution centers and driving community initiatives.</p>
-                </div>
-              </div>
-              <div class="volunteer-item" id="vol-2">
-                <div class="volunteer-icon">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
-                  </svg>
-                </div>
-                <div class="volunteer-text">
-                  <h4>Sports Division Head</h4>
-                  <p>Led sports initiatives and activities in high school Student Council.</p>
-                </div>
-              </div>
+          <!-- Core CS Concepts -->
+          <div class="skills-category-group">
+            <h4 class="skills-cat-title">Core CS Concepts</h4>
+            <div class="skills-list-inline">
+              <span class="skill-tag">Data Structures</span>
+              <span class="skill-tag">Algorithms</span>
+              <span class="skill-tag">Object-Oriented Design</span>
+              <span class="skill-tag">Operating Systems</span>
             </div>
           </div>
         </div>
       </section>
     </div>
 
-    <!-- Right Column: Projects, Military Experience -->
+    <!-- Right Column: Projects, Experience & Leadership, Volunteer & Languages -->
     <div class="main-col-right">
       <!-- Project Section -->
       <section class="section" id="projects-sec">
@@ -239,10 +222,10 @@
         </div>
       </section>
 
-      <!-- Military Section -->
+      <!-- Experience & Leadership Section -->
       <section class="section" id="military-sec">
         <div class="section-header">
-          <h3 class="section-title">Military Experience</h3>
+          <h3 class="section-title">Experience & Leadership</h3>
         </div>
         <div class="card timeline" id="military-timeline">
           <!-- Officer & Team Leader -->
@@ -281,6 +264,58 @@
             <p class="timeline-desc">
               Acquired high adaptability, critical problem-solving under pressure, creative thinking, and a results-driven growth mindset within a high-stakes intelligence environment.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Volunteer & Languages -->
+      <section class="section" id="volunteer-sec">
+        <div class="section-header">
+          <h3 class="section-title">Volunteer & Languages</h3>
+        </div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 24px;" id="volunteer-lang-card">
+          <!-- Languages Sub-card -->
+          <div>
+            <h4 style="margin-bottom: 12px; font-size: 1.1rem; color: var(--text-primary);">Languages</h4>
+            <div class="language-item" id="lang-he">
+              <span class="language-name">Hebrew</span>
+              <span class="language-level">Native</span>
+            </div>
+            <div class="language-item" id="lang-en">
+              <span class="language-name">English</span>
+              <span class="language-level">Fluent</span>
+            </div>
+          </div>
+          
+          <hr style="border: none; border-top: 1px solid var(--border-color);">
+
+          <!-- Volunteer Sub-card -->
+          <div>
+            <h4 style="margin-bottom: 12px; font-size: 1.1rem; color: var(--text-primary);">Volunteer Work</h4>
+            <div class="volunteer-list">
+              <div class="volunteer-item" id="vol-1">
+                <div class="volunteer-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+                <div class="volunteer-text">
+                  <h4>"LATET" NGO</h4>
+                  <p>Supporting local food distribution centers and driving community initiatives.</p>
+                </div>
+              </div>
+              <div class="volunteer-item" id="vol-2">
+                <div class="volunteer-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+                  </svg>
+                </div>
+                <div class="volunteer-text">
+                  <h4>Sports Division Head</h4>
+                  <p>Led sports initiatives and activities in high school Student Council.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

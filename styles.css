@@ -223,6 +223,27 @@ header.top-nav {
   fill: currentColor;
 }
 
+.print-btn {
+  width: auto !important;
+  padding: 0 16px !important;
+  gap: 8px;
+}
+
+.print-btn .btn-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 480px) {
+  .print-btn {
+    width: 40px !important;
+    padding: 0 !important;
+  }
+  .print-btn .btn-text {
+    display: none;
+  }
+}
+
 .theme-toggle .sun-icon,
 [data-theme="light"] .theme-toggle .moon-icon {
   display: none;
@@ -461,6 +482,34 @@ header.top-nav {
   background: rgba(var(--accent-primary-rgb), 0.1);
   color: var(--accent-primary);
   border-color: rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.skills-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .skills-card {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+.skills-category-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skills-cat-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 /* Relevant Courses Styles */
@@ -950,7 +999,7 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   .main-col-right {
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;
+    gap: 8px !important;
   }
 
   /* Classic Header Section */
@@ -958,9 +1007,9 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
     grid-column: span 2 !important; /* Header spans full width */
     display: block !important;
     text-align: center !important;
-    padding: 0 0 10px 0 !important;
-    border-bottom: 2px solid #000 !important;
-    margin-bottom: 15px !important;
+    padding: 0 0 6px 0 !important;
+    border-bottom: 1.5px solid #000 !important;
+    margin-bottom: 8px !important;
   }
 
   .hero-name {
@@ -1016,16 +1065,16 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   /* Sections */
   .section {
     padding: 0 !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 6px !important;
     border: none !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
 
   .section-header {
-    margin-bottom: 6px !important;
+    margin-bottom: 3px !important;
     border-bottom: 1.5px solid #000 !important; /* Classic horizontal line below headers */
-    padding-bottom: 2px !important;
+    padding-bottom: 1px !important;
   }
 
   .section-title {
@@ -1084,6 +1133,38 @@ input[type="checkbox"]#agc-toggle:checked + .toggle-switch::after {
   .skills-list-inline::before {
     content: "Skills: " !important;
     font-weight: bold !important;
+  }
+
+  .skills-card {
+    display: block !important;
+  }
+
+  .skills-category-group {
+    display: block !important;
+    margin-top: 4px !important;
+  }
+
+  .skills-cat-title {
+    font-size: 8.5pt !important;
+    font-weight: bold !important;
+    color: #000 !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    display: inline !important;
+  }
+
+  .skills-cat-title::after {
+    content: ": " !important;
+  }
+
+  .skills-category-group .skills-list-inline {
+    display: inline !important;
+    margin-top: 0 !important;
+  }
+
+  .skills-category-group .skills-list-inline::before {
+    display: none !important;
   }
 
   .skill-tag {
